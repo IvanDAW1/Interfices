@@ -1,0 +1,3 @@
+g++ -c cuenta.c++		
+
+g++ -o banco.c++ cuenta.o

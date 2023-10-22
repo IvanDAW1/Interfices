@@ -1,0 +1,103 @@
+#include <iostream>
+
+using namespace std;
+
+class Cuenta {
+
+public:
+    string numCuenta;
+    string titular;
+    float saldo;
+
+    void ingresar(float cantidad) {
+        if (cantidad >= 0)
+            saldo += cantidad;
+    }
+
+    bool retirar(float cantidad) {
+        if (cantidad <= saldo) {
+            saldo -= cantidad;
+            return true;
+        }
+        return false;
+    }
+
+    void transferir(Cuenta *destino) {
+        (*destino).ingresar(saldo);
+        retirar(saldo);
+    }
+
+    Cuenta() {}
+};
+
+void mostrar(Cuenta c) {
+
+    cout << "La cuenta de " << c.titular << " tiene " << c.saldo << " euros " << endl;
+};
+
+void procesarIngreso(Cuenta *pc) {
+
+    float cantidad;
+
+    cout << "Introduce la cantidad a ingresar ";
+    cin >> cantidad;
+    Cuenta c1 = *pc; // Esto ha hecho una copia amigo!
+    c1.ingresar(cantidad);
+
+    cout << "despues del ingreso en la funcion vale " << endl;
+    mostrar(c1);
+};
+
+void procesarRetirada(Cuenta *c) {
+
+    float cantidad;
+
+    cout << "Introduce la cantidad a retirar ";
+    cin >> cantidad;
+
+    Cuenta c1 = *c;
+    c1.retirar(cantidad);
+};
+
+void transferir(Cuenta *origen, Cuenta *destino) {
+
+    (*destino).ingresar((*origen).saldo);
+    (*origen).retirar((*origen).saldo);
+
+    // Es lo mismo esta es mas bonita
+
+    // destino->ingresar(origen->saldo);
+    // origen->retirar(origen->saldo);
+}
+
+int main(int argc, char *argv[]) {
+
+    Cuenta c1;
+    Cuenta c2;
+
+    c1.titular = "Barbie";
+    c2.titular = "Ken";
+    c1.saldo = 100;
+    c2.saldo = 50;
+
+    // c1 = c2;
+
+    mostrar(c1);
+    mostrar(c2);
+
+    // procesarIngreso(&c1);
+    // procesarRetirada(&c1);
+
+    transferir(&c1, &c2);
+    mostrar(c1);
+    mostrar(c2);
+
+    c1.saldo = 100;
+    c2.saldo = 100;
+
+    c1.transferir(&c2);
+    mostrar(c1);
+    mostrar(c2);
+    // cout << "La cuenta de " << c1.titular << " tiene " << c1.saldo << " euros " << endl;
+    // cout << "La cuenta de " << c2.titular << " tiene " << c2.saldo << " euros " << endl;
+}

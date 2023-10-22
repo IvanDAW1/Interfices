@@ -1,0 +1,3 @@
+C:/Users/Ivan/Desktop/DAM 2/Nacho Desarollo de Interficies/02_BANCO/cmake-build-debug/CMakeFiles/BANCO.dir
+C:/Users/Ivan/Desktop/DAM 2/Nacho Desarollo de Interficies/02_BANCO/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Ivan/Desktop/DAM 2/Nacho Desarollo de Interficies/02_BANCO/cmake-build-debug/CMakeFiles/rebuild_cache.dir

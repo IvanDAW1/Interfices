@@ -1,0 +1,3 @@
+C:/Users/Ivan/Desktop/DAM 2/Nacho Desarollo de Interficies/01_INTRO_C++/cmake-build-debug/CMakeFiles/01_INTRO_C__.dir
+C:/Users/Ivan/Desktop/DAM 2/Nacho Desarollo de Interficies/01_INTRO_C++/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Ivan/Desktop/DAM 2/Nacho Desarollo de Interficies/01_INTRO_C++/cmake-build-debug/CMakeFiles/rebuild_cache.dir
